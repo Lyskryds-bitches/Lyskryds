@@ -13,12 +13,17 @@ void setup() {
 
 void draw() {
   background (255); // tagn forfra hver gang draw looper
-  t1.setState(1); // besten hvilken tilstand lyset skal have
   t1.drawTrafik0();
-  t2.setState(0); // besten hvilken tilstand lyset skal have
   t2.drawTrafik0();
-  t3.setState(2);
   t3.drawTrafik0();
-  t4.setState(3);
   t4.drawTrafik0();
+  
+  if (t1.getState()<15 && t3.getState()>=0){
+  t1.setState(t1.getState()+1);
+  t3.setState(t3.getState()+1);
+  
+  t2.setState(0);
+  
+  delay(600);
+}
 }

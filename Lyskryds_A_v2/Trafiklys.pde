@@ -11,6 +11,12 @@ class Trafik0 {
     this.ypos = ypos;
   }
 
+//metoder
+int getState(){
+return state;
+}
+
+
   void drawTrafik0() {
     pushMatrix();
     translate(xpos, ypos);
