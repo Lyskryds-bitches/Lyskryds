@@ -5,7 +5,7 @@ int t = 200;
 Bil bil1, bil2;
 
 void setup() {
-  size(1200, 800);
+  size(displayWidth, displayHeight);
   bil1=new Bil(1, 0.0f, 0.0f);
   bil2=new Bil(2, 20.0f, 0.0f);
   //bil2.speed=5;
