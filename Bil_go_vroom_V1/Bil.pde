@@ -28,9 +28,12 @@ class Bil {
   }
 void displayBil(){
   pushMatrix();
-  translate(displayWidth/200*xpos, displayHeight/100*52);
+ // translate(displayWidth/200*xpos, displayHeight/100*52);
+  translate(800/200*xpos,800/100*52);
   fill(0);
-  rect(0, 0, displayWidth/50, displayHeight/50);  // Black rectangle
+  rect(0,0,800/50,800/50);
+ //rect(0, 0, displayWidth/50, displayHeight/50);  // Black rectangl;
+ 
   popMatrix();
  //xpos=xpos+speed;
 }

@@ -1,24 +1,25 @@
-int b = 1;
+/*int b = 1;
 int h = 1;
 int v = 200;
-int t = 200;
+int t = 200;*/
 Bil bil1, bil2;
 
 void setup() {
-  size(displayWidth, displayHeight);
+  size(800, 800);
   bil1=new Bil(1, 0.0f, 0.0f);
   bil2=new Bil(2, 20.0f, 0.0f);
   //bil2.speed=5;
 }
 void draw() {
-  if (h>=250||b>=250||v<=-50||t<=-50) {
+ /* if (h>=250||b>=250||v<=-50||t<=-50) {
     h = 0;
     b = 0;
     v = 200;
     t = 200;
-  }
+  }*/
   fill(200);
-  rect(0, 0, displayWidth, displayHeight);
+  //rect(0, 0, displayWidth, displayHeight);
+  rect(0,0,800,800);
   bil1.displayBil();
   println(width,bil1.getxpos());
   if(bil1.getxpos()<width){
