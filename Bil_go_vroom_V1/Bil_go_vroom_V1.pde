@@ -28,12 +28,19 @@ void draw() {
   if (bil2.getxpos()<800/bil2.getspeed()) {
     bil2.setxpos(bil2.getxpos()+1);
   } else {
-    bil2.setxpos(-50);
+    bil2.setxpos(-100);
   }
-  if (bil1.getxpos()<=bil2.getxpos()+50 && bil1.getxpos()>=bil2.getxpos()&& bil2.getspeed()>1) {
-    bil2.setspeed(bil2.getspeed()-1);
-  } else{
-    bil2.setspeed(2);
+  boolean crasha = true;
+    if (crasha){
+      bil1.getxpos()=<bil2.getxpos()+50 && bil1.getxpos()>=bil2.getxpos()&& bil2.getspeed()>1;
+    }
+    crasha=false;
+    if(crasha){
+    bil1.getxpos()>bil2.getxpos()+50&&bil1.getxpos()<bil2.getxpos()&&bil2.getspeed()>=1;
+    }
+  while (bil1.getxpos()<=bil2.getxpos()+50 && bil1.getxpos()>=bil2.getxpos()&& bil2.getspeed()>1) {
+    bil2.setspeed(1);
+    //if (bil1.getxpos()
   }
   bil3.displayBilvv();
   if (bil3.getxpos()>-840/bil3.getspeed()) {

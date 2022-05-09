@@ -29,28 +29,28 @@ class Bil {
   void displayBilhv() {
     pushMatrix();
     translate(xpos*speed, 8*52);
-    fill(0);
+    fill(255);
     rect(0, 0, 32, 16);
     popMatrix();
   }
   void displayBilvv() {
     pushMatrix();
     translate(xpos*speed, 8*48);
-    fill(0);
+    fill(255);
     rect(800, 0, 32, 16);
     popMatrix();
   }
    void displayBilln() {
     pushMatrix();
     translate(8*48,ypos*speed);
-    fill(0);
+    fill(255);
     rect(0, 0, 16, 32);
     popMatrix(); 
 }
 void displayBillo() {
     pushMatrix();
     translate(8*52,ypos*speed);
-    fill(0);
+    fill(255);
     rect(0, 800, 16, 32);
     popMatrix(); 
 }
