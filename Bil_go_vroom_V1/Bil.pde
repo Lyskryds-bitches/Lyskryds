@@ -47,4 +47,11 @@ class Bil {
     rect(0, 0, 16, 32);
     popMatrix(); 
 }
+void displayBillo() {
+    pushMatrix();
+    translate(8*52,ypos*speed);
+    fill(0);
+    rect(0, 800, 16, 32);
+    popMatrix(); 
+}
 }
