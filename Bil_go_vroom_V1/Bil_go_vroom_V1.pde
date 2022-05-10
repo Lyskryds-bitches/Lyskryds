@@ -8,25 +8,25 @@ void setup() {
   size(1600, 800);
   rectMode(CENTER);
   for(int i=0;i<bilListe.length;i++){
-    bilListe[i]=new Bil((int)random(1,6), random(width), 0.0f,i);
+    bilListe[i]=new Bil((int)random(1,6), random(width), height/2+25 ,i);
   }
   /*t1 = new Trafik0(290, 230);
   t1.setState(0);*/
 
-  t2 = new Trafik0(565, 230);
+  t2 = new Trafik0(width/2+50, height/2-100);
   t2.setState(8);
   
   /*t3 = new Trafik0(480,480);
   t3.setState(0);*/
   
-  t4 = new Trafik0(705,480);
+  t4 = new Trafik0(width/2-50, height/2+100);
   t4.setState(8);
 }
 void draw() {
   background(225);
   drawRoads();
   
-  if(frameCount%60==0){
+  if(frameCount%60==0){ // skift en state i trafiklyset hvert sekund
   changeLght();
   }
  
@@ -43,8 +43,16 @@ void draw() {
     if(bilListe[i].getspeed()==0){
       bilListe[i].setspeed(1);
     }
+    println (t2.getState());
+     println(t2.getDistToLight(bilListe[i].location));
+    //*********************************************
+    // hvis (t2 er rød (state 6 til og med 15) og distancen til krydset er mindre en 100 t2.getDistToLight(bil) og noget mere
+    // SÅ Standsbilen 
+    //********************************************************************************************************
+    
+    }
     bilListe[i].move();
-    bilListe[i].displayBilhv();
+    bilListe[i].displayBil();
     
   }  
 }
@@ -53,40 +61,25 @@ void draw() {
 void drawRoads(){
 
 //Sorte veje
-  //fill(0);
-  //rect(350,0,100,800);
+  rectMode(CORNER);
   fill(0);
-  rect(0,400,width,100);
-  
-  //Lodret vej strej
-  /*fill(255);
-  rect(395,0,10,350);
-  fill(255);
-  rect(395,450,10,350);*/
+  rect(0,height/2-50,width,100);
   
   //Vandret vej strej
   fill(255);
   rect(0,395,width,10);
-  fill(255);
-  //rect(705,395,700,10);
   
   //Stop streje
-  fill(255);
-  //rect(600,350,5,100);
-  fill(255);
-  //rect(700,350,5,100);
-  /*fill(255);
-  rect(350,345,100,5);
-  fill(255);
-  rect(350,450,100,5);*/
+  rect(width/2-50,height/2-50,5,100);
+  rect(width/2+50,height/2-50,5,100);
   
+  rectMode(CENTER);
 
-  
 }
 
 void changeLght(){
 //print(t1.getState()+" ");
-  println(t2.getState());
+  //println(t2.getState());
 
   /*if (t1.getState()<15) {
     t1.setState(t1.getState()+1);

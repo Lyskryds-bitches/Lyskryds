@@ -4,16 +4,22 @@ class Trafik0 {
   int lengde =30; //
   int hoejde = 90;
   int state; // er lyset rød eller grøn
+  PVector location;
 
   // konstruktøren
   Trafik0(int xpos, int ypos) {
     this.xpos = xpos;
     this.ypos = ypos;
+    this.location = new PVector(xpos,ypos); 
   }
 
   //metoder
   int getState() {
     return state;
+  }
+  
+  float getDistToLight(PVector bil){
+    return this.location.dist(bil);
   }
 
 

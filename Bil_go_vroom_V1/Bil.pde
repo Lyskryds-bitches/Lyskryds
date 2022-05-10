@@ -41,6 +41,11 @@ class Bil {
     //this.ypos=ypos;
     this.location.y=ypos;
   }
+  void displayBil() {
+    fill(r, b, g);
+    rect(location.x, location.y, 32, 16);
+  }
+  
   void displayBilhv() {
     pushMatrix();
     //translate(xpos*speed, 8*52);
@@ -102,11 +107,11 @@ class Bil {
 
     if (distanceVectMag < minDistance && this.location.x < other.location.x) {
       this.setspeed(0);
-      println(id+" Stopper "+distanceVectMag+" "+minDistance+" "+this.velocity);
+      //println(id+" Stopper "+distanceVectMag+" "+minDistance+" "+this.velocity);
     }
     else if (distanceVectMag > minDistance && this.location.x > other.location.x) {
       this.setspeed(this.getspeed()+1);
-      println(id+" Gi gas "+distanceVectMag+" "+getspeed());
+      //println(id+" Gi gas "+distanceVectMag+" "+getspeed());
     }
     
     
