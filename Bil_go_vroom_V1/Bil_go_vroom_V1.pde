@@ -1,109 +1,116 @@
 int CarCount = 12;
-Trafik0 t1, t2, t3, t4;
-
+Trafik0  t2, t4;
+int i=0;
 
 Bil[] bilListe = new Bil[CarCount];
 
 void setup() {
   size(1600, 800);
   rectMode(CENTER);
-  for(int i=0;i<bilListe.length;i++){
-    bilListe[i]=new Bil((int)random(1,6), random(width), height/2+25 ,i);
+  for (int i=0; i<bilListe.length; i++) {
+    bilListe[i]=new Bil((int)random(1, 6), random(width), height/2+25, i);
   }
   /*t1 = new Trafik0(290, 230);
-  t1.setState(0);*/
+   t1.setState(0);*/
 
   t2 = new Trafik0(width/2+50, height/2-100);
   t2.setState(8);
-  
+
   /*t3 = new Trafik0(480,480);
-  t3.setState(0);*/
-  
+   t3.setState(0);*/
+
   t4 = new Trafik0(width/2-50, height/2+100);
   t4.setState(8);
 }
 void draw() {
   background(225);
   drawRoads();
-  
-  if(frameCount%60==0){ // skift en state i trafiklyset hvert sekund
-  changeLght();
+
+  if (frameCount%60==0) { // skift en state i trafiklyset hvert sekund
+    changeLght();
   }
- 
- //t1.drawTrafik0();
+
+  //t1.drawTrafik0();
   t2.drawTrafik0();
   //t3.drawTrafik0();
   t4.drawTrafik0();
-  
- 
-  for(int i=0;i<bilListe.length;i++){
-    for(int j=0;j<bilListe.length;j++){
+
+
+  for (int i=0; i<bilListe.length; i++) {
+    for (int j=0; j<bilListe.length; j++) {
       bilListe[i].checkCollision(bilListe[j]);
     }
-    if(bilListe[i].getspeed()==0){
+    if (bilListe[i].getspeed()==0) {
       bilListe[i].setspeed(1);
     }
     println (t2.getState());
-     println(t2.getDistToLight(bilListe[i].location));
+    println(t2.getDistToLight(bilListe[i].location));
+    if (t2.getDistToLight(bilListe[j])<50){
+     println("stop"); 
+    }
+    // stopBil();
     //*********************************************
     // hvis (t2 er rød (state 6 til og med 15) og distancen til krydset er mindre en 100 t2.getDistToLight(bil) og noget mere
     // SÅ Standsbilen 
     //********************************************************************************************************
+  }
+  bilListe[i].move();
+  bilListe[i].displayBil();
+}  
+
+/*void stopBil(){
+ if (t2.getState()>=6&&t2.getState()<=15&&t2.getDistToLight(bilListe[i].location)<50) {
     
-    }
-    bilListe[i].move();
-    bilListe[i].displayBil();
-    
-  }  
-}
+        bilListe[i].setspeed(0);
+      } else {
+        bilListe[i].setspeed((float)random(1, 6));
+      }
+    } */
 
 
-void drawRoads(){
+void drawRoads() {
 
-//Sorte veje
+  //Sorte veje
   rectMode(CORNER);
   fill(0);
-  rect(0,height/2-50,width,100);
-  
+  rect(0, height/2-50, width, 100);
+
   //Vandret vej strej
   fill(255);
-  rect(0,395,width,10);
-  
-  //Stop streje
-  rect(width/2-50,height/2-50,5,100);
-  rect(width/2+50,height/2-50,5,100);
-  
-  rectMode(CENTER);
+  rect(0, 395, width, 10);
 
+  //Stop streje
+  rect(width/2-50, height/2-50, 5, 100);
+  rect(width/2+50, height/2-50, 5, 100);
+
+  rectMode(CENTER);
 }
 
-void changeLght(){
-//print(t1.getState()+" ");
+void changeLght() {
+  //print(t1.getState()+" ");
   //println(t2.getState());
 
   /*if (t1.getState()<15) {
-    t1.setState(t1.getState()+1);
-  } else {
-    t1.setState(0);
-  }*/
+   t1.setState(t1.getState()+1);
+   } else {
+   t1.setState(0);
+   }*/
 
   if (t2.getState()<15) { 
     t2.setState(t2.getState()+1);
   } else {
     t2.setState(0);
   }
-  
+
   /*if (t3.getState()<15) { 
-    t3.setState(t3.getState()+1);
-  } else {
-    t3.setState(0);
-  }*/
-  
+   t3.setState(t3.getState()+1);
+   } else {
+   t3.setState(0);
+   }*/
+
   if (t4.getState()<15) { 
     t4.setState(t4.getState()+1);
   } else {
     t4.setState(0);
   }
-  
- 
 }

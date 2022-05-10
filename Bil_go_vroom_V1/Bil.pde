@@ -27,7 +27,7 @@ class Bil {
   }
   float getxpos() {
     //return this.xpos;
-    return location.x;
+    return this.location.x;
   }
   void setxpos(float xpos) {
     //this.xpos=xpos;

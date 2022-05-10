@@ -18,8 +18,8 @@ class Trafik0 {
     return state;
   }
   
-  float getDistToLight(PVector bil){
-    return this.location.dist(bil);
+  float getDistToLight(PVector Bil){
+    return this.location.dist(Bil);
   }
 
 
