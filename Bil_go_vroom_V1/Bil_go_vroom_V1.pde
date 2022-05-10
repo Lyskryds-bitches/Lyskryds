@@ -45,10 +45,10 @@ void draw() {
     }
     println (t2.getState());
     println(t2.getDistToLight(bilListe[i].location));
-    if (t2.getDistToLight(Bil)<50){
-     println("stop"); 
+    if (t2.getDistToLight(Bil)<50){// det er her jeg prover bare at få printet en line når bilen kommer tæt nok på lyskrydset men det gider ikke at virke. har prøvet mange forskellige muligheder end bare det her.
+     println("stop bil"); 
     }
-    // stopBil();
+    // stopBil(); jeg prøvede også at lave en void funktion som tjekkede og stoppede bilen, dn virkede heller ikke
     //*********************************************
     // hvis (t2 er rød (state 6 til og med 15) og distancen til krydset er mindre en 100 t2.getDistToLight(bil) og noget mere
     // SÅ Standsbilen 
@@ -58,7 +58,7 @@ void draw() {
   bilListe[i].displayBil();
 }  
 
-/*void stopBil(){
+/*void stopBil(){ //her er den void funktion som jeg prøvede at lave men fejlede med.
  if (t2.getState()>=6&&t2.getState()<=15&&t2.getDistToLight(bilListe[i].location)<50) {
     
         bilListe[i].setspeed(0);
