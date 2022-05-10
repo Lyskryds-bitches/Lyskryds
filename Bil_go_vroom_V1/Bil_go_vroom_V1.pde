@@ -45,7 +45,7 @@ void draw() {
     }
     println (t2.getState());
     println(t2.getDistToLight(bilListe[i].location));
-    if (t2.getDistToLight(bilListe[j])<50){
+    if (t2.getDistToLight(Bil)<50){
      println("stop"); 
     }
     // stopBil();
