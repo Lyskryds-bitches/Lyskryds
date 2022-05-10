@@ -85,35 +85,38 @@ class Trafik0 {
 
   void roed() {
     fill(255, 0, 0);
-    circle(15, 15, 25);
+    circle(0, -25, 25);
     fill(125);
-    circle(15, 45, 25);
-    circle(15, 75, 25);
+    circle(0, 0, 25);
+    circle(0, 25, 25);
   }
 
   void groen() {
     fill(125);
-    circle(15, 15, 25);
-    circle(15, 45, 25);
+    circle(0, -25, 25);
+
+       circle(0, 0, 25);
     fill(0, 255, 0);
-    circle(15, 75, 25);
+    circle(0, 25, 25);
   }
 
   void roedgul() {
     fill(255, 0, 0);
-    circle(15, 15, 25);
+        circle(0, -25, 25);
+
     fill(255, 255, 0);
-    circle(15, 45, 25);
+       circle(0, 0, 25);
     fill(125);
-    circle(15, 75, 25);
+    circle(0, 25, 25);
   }
 
   void gul() {
     fill(125);
-    circle(15, 15, 25);
+    circle(0, -25, 25);
+
     fill(255, 255, 0);
-    circle(15, 45, 25);
+       circle(0, 0, 25);
     fill(125);  
-    circle(15, 75, 25);
+    circle(0, 25, 25);
   }
 }
