@@ -12,6 +12,13 @@ void setup() {
   bil7=new Bil(1, 0.0f, 0.0f);
   bil8=new Bil(2, 0.0f, 0.0f);
 }
+/*boolean crasha(){
+ if(bil1.getxpos()>bil2.getxpos()+50&&bil1.getxpos()<bil2.getxpos()&&bil2.getspeed()>=1 ){
+      return true;
+    } else{
+    return false;
+    }
+}*/
 void draw() {
 
   fill(200);
@@ -30,10 +37,14 @@ void draw() {
   } else {
     bil2.setxpos(-100);
   }
+  if (bil2.crash()==true){
+   bil2.setspeed(1); 
+  }else{
+  bil2.setspeed(2);
+  }
+  
   //boolean crasha = true;
-    if(bil1.getxpos()>bil2.getxpos()+50&&bil1.getxpos()<bil2.getxpos()&&bil2.getspeed()>=1 ){
-      bil2.setspeed(1);
-    }
+    
   /*  crasha=false;
     if(crasha){
     bil1.getxpos()>bil2.getxpos()+50&&bil1.getxpos()<bil2.getxpos()&&bil2.getspeed()>=1;
