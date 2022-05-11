@@ -45,7 +45,7 @@ void draw() {
     }
     println (t2.getState());
     println(t2.getDistToLight(bilListe[i].location));
-    if (t2.getDistToLight(Bil)<50){// det er her jeg prover bare at få printet en line når bilen kommer tæt nok på lyskrydset men det gider ikke at virke. har prøvet mange forskellige muligheder end bare det her.
+    if (t2.getDistToLight(bilListe[i])<50){// det er her jeg prover bare at få printet en line når bilen kommer tæt nok på lyskrydset men det gider ikke at virke. har prøvet mange forskellige muligheder end bare det her.
      println("stop bil"); 
     }
     // stopBil(); jeg prøvede også at lave en void funktion som tjekkede og stoppede bilen, dn virkede heller ikke
