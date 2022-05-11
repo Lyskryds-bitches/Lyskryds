@@ -1,4 +1,5 @@
 
+<<<<<<< Updated upstream
 Bil bil1, bil2, bil3, bil4, bil5, bil6, bil7, bil8;
 
 void setup() {
@@ -18,10 +19,51 @@ void setup() {
     } else{
     return false;
     }
+=======
+int CarCount = 12;
+
+Bil[] bilListe = new Bil[CarCount];
+Trafik0 t2, t4;
+void setup() {
+  size(1600, 800);
+  rectMode(CENTER);
+  for (int i=0; i<bilListe.length; i++) {
+    bilListe[i]=new Bil((int)random(1, 6), random(width), 0.0f, i);
+  }
+  t2 = new Trafik0(565, 230);
+  t2.setState(8);
+  t4 = new Trafik0(705, 480);
+  t4.setState(8);
+}
+/*void loop(){
+ t2.drawTrafik0();
+  t4.drawTrafik0();
+  fill(0);
+  rect(0,350,1600,100);
+  fill(255);
+  rect(0,395,600,10);
+  rect(705,395,700,10);
+  rect(600,350,5,100);
+  rect(700,350,5,100);
+  if (t2.getState()<15) { 
+  t2.setState(t2.getState()+1);
+} else {
+  t2.setState(0);
+}
+
+if (t4.getState()<15) { 
+  t4.setState(t4.getState()+1);
+} else {
+  t4.setState(0);
+}
+
+//delay(1000); 
+>>>>>>> Stashed changes
 }*/
 void draw() {
 
   fill(200);
+<<<<<<< Updated upstream
   rect(0, 0, 800, 800);
   bil1.displayBilhv();
   println(width, bil1.getxpos(), bil2.getxpos(), bil3.getxpos(), bil4.getxpos(), bil5.getypos(), bil6.getypos(), bil7.getypos(), bil8.getypos());
@@ -89,4 +131,40 @@ void draw() {
   } else {
     bil8.setypos(20);
   }
+=======
+
+  
+  for (int i=0; i<bilListe.length; i++) {
+    for (int j=0; j<bilListe.length; j++) {
+      bilListe[i].checkCollision(bilListe[j]);
+    }
+    if (bilListe[i].getspeed()==0) {
+      bilListe[i].setspeed(1);
+    }
+    bilListe[i].move();
+    bilListe[i].displayBilhv();
+  }
+  t2.drawTrafik0();
+  t4.drawTrafik0();
+  fill(0);
+  rect(0,350,1600,100);
+  fill(255);
+  rect(0,395,600,10);
+  rect(705,395,700,10);
+  rect(600,350,5,100);
+  rect(700,350,5,100);
+  if (t2.getState()<15) { 
+  t2.setState(t2.getState()+1);
+} else {
+  t2.setState(0);
+}
+
+if (t4.getState()<15) { 
+  t4.setState(t4.getState()+1);
+} else {
+  t4.setState(0);
+}
+
+//delay(1000);
+>>>>>>> Stashed changes
 }
