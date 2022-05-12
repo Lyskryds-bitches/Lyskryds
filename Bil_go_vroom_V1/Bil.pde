@@ -52,7 +52,7 @@ class Bil {
   }
 
   void checkCollision(Bil other) {
-    //https://processing.org/examples/circlecollision.html
+    //credit til: https://processing.org/examples/circlecollision.html
 
     float minDistance = 60.0f;
     // Get distances between the balls components
@@ -64,11 +64,9 @@ class Bil {
 
     if (distanceVectMag < minDistance && this.location.x < other.location.x) {
       this.setspeed(0);
-      //println(id+" Stopper "+distanceVectMag+" "+minDistance+" "+this.velocity);
     }
     else if (distanceVectMag > minDistance && this.location.x > other.location.x) {
       this.setspeed(this.getspeed()+1);
-      //println(id+" Gi gas "+distanceVectMag+" "+getspeed());
     }
     
     

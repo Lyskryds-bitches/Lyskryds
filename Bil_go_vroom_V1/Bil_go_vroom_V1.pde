@@ -31,17 +31,17 @@ void draw() {
 
   for (int i=0; i<bilListe.length; i++) {
     //for (int j=0; j<bilListe.length; j++) { skal ikke indlægges i rapporten
-      bilListe[i].checkCollision(bilListe[i]);
-    }
-    if (bilListe[i].getspeed()==0) {
-      bilListe[i].setspeed(1);
-    }
+    bilListe[i].checkCollision(bilListe[i]);
+  }
+  if (bilListe[i].getspeed()==0) {
+    bilListe[i].setspeed(1);
+  }
 
-    if (t4.getDistToLight(bilListe[i].location)<78&&t4.getState()>=6&&t4.getState()<=15){
-     bilListe[i].setspeed(0);
-    }else{
+  if (t4.getDistToLight(bilListe[i].location)<78&&t4.getState()>=6&&t4.getState()<=15) {
+    bilListe[i].setspeed(0);
+  } else {
     bilListe[i].setspeed(3);
-    }
+  }
   //} skal heller ikke med i rapporten
   bilListe[i].move();
   bilListe[i].displayBil();
