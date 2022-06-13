@@ -9,7 +9,7 @@ void setup() {
   rectMode(CENTER);
   for (int i=0; i<bilListe.length; i++) {
     bilListe[i]=new Bil((int)random(1, 6), random(width), height/2+25, i);
-  }
+}
 
   t2 = new Trafik0(width/2+50, height/2-100);
   t2.setState(8);
@@ -30,7 +30,7 @@ void draw() {
 
 
   for (int i=0; i<bilListe.length; i++) {
-    //for (int j=0; j<bilListe.length; j++) { skal ikke indlægges i rapporten
+    //for (int j=0; j<bilListe.length; j++) { //skal ikke indlægges i rapporten
     bilListe[i].checkCollision(bilListe[i]);
   }
   if (bilListe[i].getspeed()==0) {
@@ -40,9 +40,14 @@ void draw() {
   if (t4.getDistToLight(bilListe[i].location)<78&&t4.getState()>=6&&t4.getState()<=15) {
     bilListe[i].setspeed(0);
   } else {
-    bilListe[i].setspeed(3);
+    println(bilListe[i].getspeed());
+    //println(bilListe[i].getxpos());
+    bilListe[i].setspeed(random(1,6));
+    /*if (frameCount%240==0){
+    bilListe[i].setspeed(random(bilListe[i].getspeed()-0.5,bilListe[i].getspeed()+0.5));
+    }*/
   }
-  //} skal heller ikke med i rapporten
+ // } //skal heller ikke med i rapporten
   bilListe[i].move();
   bilListe[i].displayBil();
 }  
